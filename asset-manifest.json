@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Agenda-Dental/static/css/main.4d4dd6b9.css",
-    "main.js": "/Agenda-Dental/static/js/main.0b98ed16.js",
+    "main.js": "/Agenda-Dental/static/js/main.1621a1c4.js",
     "static/js/453.f066061f.chunk.js": "/Agenda-Dental/static/js/453.f066061f.chunk.js",
     "static/media/diente.png": "/Agenda-Dental/static/media/diente.5f6af5c88d808780e969.png",
     "index.html": "/Agenda-Dental/index.html",
     "main.4d4dd6b9.css.map": "/Agenda-Dental/static/css/main.4d4dd6b9.css.map",
-    "main.0b98ed16.js.map": "/Agenda-Dental/static/js/main.0b98ed16.js.map",
+    "main.1621a1c4.js.map": "/Agenda-Dental/static/js/main.1621a1c4.js.map",
     "453.f066061f.chunk.js.map": "/Agenda-Dental/static/js/453.f066061f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d4dd6b9.css",
-    "static/js/main.0b98ed16.js"
+    "static/js/main.1621a1c4.js"
   ]
 }
