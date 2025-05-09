@@ -1,21 +1,37 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
 
-function Cita({ cita, eliminarCita, setCitaEditando }) {
-    const { paciente, fecha, hora, tratamiento, observaciones, id } = cita;
-  
-    return (
-      <div className="cita-card">
-        <p><strong>Paciente:</strong> {paciente}</p>
-        <p><strong>Fecha:</strong> {fecha}</p>
-        <p><strong>Hora:</strong> {hora}</p>
-        <p><strong>Tratamiento:</strong> {tratamiento}</p>
-        {observaciones && <p><strong>Observaciones:</strong> {observaciones}</p>}
-  
-        <button onClick={() => eliminarCita(id)}>Eliminar</button>
-        <button onClick={() => setCitaEditando(cita)}>Editar</button>
-      </div>
-    );
-  }
-  
+
+useEffect(() => {
+  const citasRef = collection(db, "citas");
+
+  const unsubscribe = onSnapshot(citasRef, (snapshot) => {
+    const citasList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    console.log("Citas actualizadas desde Firestore:", citasList);
+    setCitas(citasList);
+  });
+
+  return () => unsubscribe(); // Limpieza del listener al desmontar el componente
+}, []);
+
+
+  return (
+    <div>
+      <h1>Lista de Citas</h1>
+      {citas.length === 0 ? (
+        <p>No hay citas registradas.</p>
+      ) : (
+        <ul>
+          {citas.map(cita => (
+            <li key={cita.id}>
+              <strong>{cita.nombre}</strong> - {cita.fecha} a las {cita.hora}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+
 
 export default Cita;
