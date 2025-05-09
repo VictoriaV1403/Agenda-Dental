@@ -1,7 +1,6 @@
 {
   "name": "hello-react",
   "version": "0.1.0",
-  "homepage": "https://victoriav1403.github.io/Agenda-Dental/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

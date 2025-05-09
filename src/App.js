@@ -45,11 +45,7 @@ function App() {
   
     return totalMinutos >= 540 && totalMinutos <= 1140; // 9:00 a 19:00
   };
-  
-  
-  
-  
-
+ 
   // Validar que no se empalmen
   const hayEmpalme = (fecha, hora, idActual = null) => {
     return citas.some(cita =>

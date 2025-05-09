@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 const obtenerDiaSemana = (fechaStr) => {
   const [year, month, day] = fechaStr.split('-');
-  const fecha = new Date(year, month - 1, day); // mes inicia en 0
+  const fecha = new Date(year, month - 1, day); 
   return fecha.getDay();
 };
 
